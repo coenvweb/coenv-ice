@@ -1,0 +1,116 @@
+/* ==========================================================================
+   Helpful mixins
+   ========================================================================== */
+
+//$base-font-size: 14px !default;
+
+/*
+ * Use rems with px fallback
+ */
+@function ie8_unit_to_px( $val ) {
+  @if $val == auto {
+    @return $val;
+  } @else {
+    @if unitless( $val ) {
+      @if $val == 0 { @return $val;
+      } @else { @return $val * $base-font-size; }
+    } @else { @return $val };
+  }
+}
+
+@function ie8_unit_to_rem( $val ) {
+  @if $val == auto { @return $val; }
+  @else {
+    @if unitless($val) {
+      @if $val == 0 { @return $val; }
+      @else { @return $val+rem; }
+    } @else { @return $val; }
+  }
+}
+
+@mixin rem( $prop, $val... ) {
+  $n: length($val);
+  $i: 1;
+  $px-list: ();
+  $rem-list: ();
+
+  @while $i <= $n {
+    $px-list: append( $px-list, ie8_unit_to_px( nth( $val, $i ) ) );
+    $rem-list: append( $rem-list, ie8_unit_to_rem( nth( $val, $i ) ) );
+    $i: $i + 1;
+  }
+
+  #{$prop}: $px-list;
+  #{$prop}: $rem-list;
+}
+
+/*  Horzontal rule for debugging
+    ======================================================================== */
+@mixin baseline-grid( $line-color: rgba(0,0,0,0.25), $line-height: 1.5rem ) {
+  @include background-image(
+    linear-gradient( top, rgba(0,0,0,0) 95%, $line-color 100% )
+  );
+  background-size: 100% $line-height;
+}
+
+/*  Font size and line height
+    ======================================================================== */
+
+@mixin font-size( $val ) {
+  font-size: $val + px;
+  font-size: ( $val / ( $base-font-size / 1px ) ) + rem;
+}
+
+@mixin line-height( $val ) {
+  line-height: $val + px;
+  line-height: ( $val / ( $base-font-size / 1px ) ) + rem;
+}
+
+/*  Media queries
+    ======================================================================== */
+
+$iPhoneLandscape: 321;
+$iPadPortrait: 768;
+$iPadLandscape: 1000;
+
+@mixin min-width( $point ) {
+  @media ( min-width: $point + px ) { @content; }
+}
+
+@mixin max-width( $point ) {
+  @media ( max-width: $point + px ) { @content; } 
+}
+
+@mixin min-height( $point ) {
+  @media ( min-height: $point + px ) { @content; }
+}
+
+@mixin max-height( $point ) {
+  @media ( max-height: $point + px ) { @content; } 
+}
+
+/*  Placeholders
+    ======================================================================== */
+
+@mixin placeholder {
+  &::-webkit-input-placeholder { @content }
+  &:-moz-placeholder { @content }
+  &::-moz-placeholder { @content }
+  &:-ms-input-placeholder { @content }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

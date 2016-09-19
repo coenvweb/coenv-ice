@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Procession: a looping slider plugin for jQuery</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="/assets/css/screen.css">
+
+        <!-- Scripts at bottom -->
+
+        <style type="text/css">
+
+            body {
+                padding: 100px;
+            }
+
+            .control-box {
+                padding: 100px 20px 20px;
+                width: 240px;
+                background: #333;
+                color: #fff;
+                -webkit-font-smoothing: antialiased;
+            }
+
+            .states {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+
+        </style>
+    </head>
+    <body>
+        <!--[if lt IE 9]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <div class="wrapper">
+
+            <header role="banner">
+                <hgroup class="container">
+                    <!--<a class="instance" href="#">Create/destroy plugin instance</a>-->
+                </hgroup>
+            </header>
+
+            <div class="control-box">
+                <!--<form action="">-->
+                    <ul class="states">
+                        <li value="AL">Alabama</li> 
+                        <li value="AK">Alaska</li> 
+                        <li value="AZ">Arizona</li> 
+                        <li value="AR">Arkansas</li> 
+                        <li value="CA">California</li> 
+                        <li value="CO">Colorado</li> 
+                        <li value="CT">Connecticut</li> 
+                        <li value="DE">Delaware</li> 
+                        <li value="DC">District Of Columbia</li> 
+                        <li value="FL">Florida</li> 
+                        <li value="GA">Georgia</li> 
+                        <li value="HI">Hawaii</li> 
+                        <li value="ID">Idaho</li> 
+                        <li value="IL">Illinois</li> 
+                        <li value="IN">Indiana</li> 
+                        <li value="IA">Iowa</li> 
+                        <li value="KS">Kansas</li> 
+                        <li value="KY">Kentucky</li> 
+                        <li value="LA">Louisiana</li> 
+                        <li value="ME">Maine</li> 
+                        <li value="MD">Maryland</li> 
+                        <li value="MA">Massachusetts</li> 
+                        <li value="MI">Michigan</li> 
+                        <li value="MN">Minnesota</li> 
+                        <li value="MS">Mississippi</li> 
+                        <li value="MO">Missouri</li> 
+                        <li value="MT">Montana</li> 
+                        <li value="NE">Nebraska</li> 
+                        <li value="NV">Nevada</li> 
+                        <li value="NH">New Hampshire</li> 
+                        <li value="NJ">New Jersey</li> 
+                        <li value="NM">New Mexico</li> 
+                        <li value="NY">New York</li> 
+                        <li value="NC">North Carolina</li> 
+                        <li value="ND">North Dakota</li> 
+                        <li value="OH">Ohio</li> 
+                        <li value="OK">Oklahoma</li> 
+                        <li value="OR">Oregon</li> 
+                        <li value="PA">Pennsylvania</li> 
+                        <li value="RI">Rhode Island</li> 
+                        <li value="SC">South Carolina</li> 
+                        <li value="SD">South Dakota</li> 
+                        <li value="TN">Tennessee</li> 
+                        <li value="TX">Texas</li> 
+                        <li value="UT">Utah</li> 
+                        <li value="VT">Vermont</li> 
+                        <li value="VA">Virginia</li> 
+                        <li value="WA">Washington</li> 
+                        <li value="WV">West Virginia</li> 
+                        <li value="WI">Wisconsin</li> 
+                        <li value="WY">Wyoming</li>
+                    </ul>
+                <!--</form>-->
+            </div>
+
+        </div><!-- .wrapper -->
+
+        <script src="/components/jquery/jquery.min.js"></script>
+        <script src="/components/imagesloaded/jquery.imagesloaded.min.js"></script>
+        <script src="/jquery.procession.js"></script>
+        <!--<script src="/jquery.procession.autoadvance.js"></script>-->
+
+        <script>
+            $(function() {
+
+                $('.states').procession({
+                    orientation: 'vertical'
+                });
+
+                
+
+//                $('.states').procession({
+//                    innerSelector: '.inner',
+//                    itemSelector: '.item',
+//                    //orientation: 'vertical',
+//                    //align: 'right',
+//                    containerStyles: {
+//                        overflow: 'visible'
+//                    }
+ //               });
+            });
+        </script>
+    </body>
+</html>

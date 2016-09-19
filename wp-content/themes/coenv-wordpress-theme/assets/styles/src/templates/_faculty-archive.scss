@@ -1,0 +1,436 @@
+
+/*	Faculty toolbox
+		======================================================================== */
+
+.faculty-toolbox {
+	z-index: 9999999 !important;
+
+	.faculty-toolbox-inner {
+		background: #303030;
+		overflow: hidden;
+	} 
+
+	.faculty-toolbox-header {
+		//height: 56px;
+		//border-bottom: 1px solid #222;
+
+		h1 {
+			margin: 0;
+			@include serif;
+			@include font-size(36);
+			font-weight: 200;
+			color: #fff;
+			@extend .antialiased;
+		}
+
+		h1 a {
+			display: block;
+			@include rem('padding', 0.5, 1);
+			color: #fff;
+			text-decoration: none;
+			border-bottom: 1px solid #222;
+		}
+
+		h1 a:hover {
+			background: $accent;
+			color: #fff !important;
+		}
+
+	} // .faculty-toolbox-header
+
+	.faculty-toolbox-tools {
+		position: relative;
+		border-top: 1px solid #3d3d3d;
+		border-bottom: 1px solid #222;
+	}
+
+	// acts as slide container for theme roller and form
+	.faculty-toolbox-tools-inner {
+		position: relative;
+		transition: all .2s ease;
+
+	} // .faculty-toolbox-tools-inner
+
+	// show tools state
+	&.show-tools {
+
+		.csstransforms & {
+
+			.faculty-toolbox-tools-inner {
+				transform: translateX(-100%);
+			}
+
+			.faculty-toolbox-feedback {
+				height: 100px;
+			}
+
+		} // .csstransforms &
+
+	} // &.show-tools
+
+	.faculty-toolbox-theme-roller-section {
+		height: 200px;
+
+		p.title {
+			margin: 0;
+			@include rem('padding', 0.25, 1, 0);
+			height: 20px;
+			@include font-size(11);
+			@include line-height(20);
+			text-transform: uppercase;
+			font-weight: 800;
+			color: #999;
+			@extend .antialiased;
+		}
+
+	} // .faculty-toolbox-theme-roller-section
+
+	.faculty-toolbox-theme-roller {
+		position: relative;
+		@include font-size(16);
+		@include line-height(27);
+		font-weight: 400;
+		color: #fff;
+		cursor: pointer;
+		@extend .disable-select;
+		@extend .antialiased;
+		height: 180px;
+
+		&:focus {
+			outline: none;
+		}
+
+		// positioned on top of roller to act as interface for clicks/touches
+		.faculty-toolbox-interaction-layer {
+			position: absolute;
+display: none;
+			background: red;
+			z-index: 999;
+			@include rem('top', 0.75);
+			@include rem('right', 0.75);
+			@include rem('bottom', 0.75);
+			@include rem('left', 0.75);
+			cursor: pointer;
+
+			// gradients
+			&:before,
+			&:after {
+				display: block;
+display: none;
+				content: "";
+				position: absolute;
+				z-index: 9999;
+				right: 0;
+				left: 0;
+				height: 60px;
+				//outline: 1px solid red;
+				background: url(../../img/faculty-tools-gradient-555.png) no-repeat;
+			}
+
+			&:before {
+				top: 0;
+				background-position: 0 bottom;
+				border-radius: 4px 4px 0 0;
+			}
+
+			&:after {
+				bottom: 0;
+				background-position: 0 top;
+				border-radius: 0 0 4px 4px;
+			}
+
+		} // .faculty-toolbox-interaction-layer
+
+		.faculty-toolbox-theme-roller-inner {
+			position: absolute !important;
+			@include rem('top', 0.75);
+			@include rem('right', 0.75);
+			@include rem('bottom', 0.75);
+			@include rem('left', 0.75);
+			overflow: hidden;
+			background: #666;
+			border-radius: 4px;
+			box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+		}
+
+		.faculty-toolbox-theme-roller-item {
+			@include rem('padding', 0, 1);
+			width: 262px !important;
+			white-space: nowrap;
+			cursor: pointer;
+
+			&.active,
+			&.active:hover {
+				//color: #009cff !important;
+				background: $accent;
+				font-weight: 600;
+			}
+
+			&:hover {
+				color: #fff !important;
+				//background: lighten( $accent, 15% );
+				background: #999;
+			}
+
+		} // .faculty-toolbox-theme-roller-item
+
+	} // .faculty-toolbox-theme-roller
+
+	.faculty-toolbox-form {
+		position: absolute;
+		top: 0;
+		left: 100%;
+		@include rem('padding', 0.5, 1);
+		width: 100%;
+		height: 100%;
+
+		.select-wrapper {
+			@include rem('margin', 0.5, 0, 0);
+		}
+
+		select {
+			margin: 0;
+			width: 100%;
+			@include font-size(14);
+			border-radius: 4px;
+		}
+
+		.chzn-container {
+			margin: 0;
+		}
+
+		label {
+			display: block;
+			@include font-size(11);
+			text-transform: uppercase;
+			font-weight: 800;
+			color: #999;
+		}
+
+		.hrule {
+			@include rem('margin', 0.5, -1);
+			height: 1px;
+			border-bottom: 1px solid #3d3d3d;
+			border-top: 1px solid #222;
+		} // .hrule
+		
+		.field-wrap {
+			@include rem('margin', 0.5, 0, 0);
+			width: 100%;
+
+			input[type="text"] {
+				background: #666;
+				@include font-size(12);
+				color: #fff;
+
+				@include placeholder() {
+					color: #fff;
+				}
+
+			} // input[type="text"]
+
+			button[type="submit"] {
+				background: #666;
+				border-left: none;
+
+				i {
+					color: #fff;
+				}
+
+			} // button[type="submit"]
+
+		} // .field-wrap
+
+	} // .faculty-toolbox-form
+
+	.faculty-toolbox-footer {
+		height: 86px;
+		border-top: 1px solid #3d3d3d;
+		overflow: hidden;
+	}
+
+	.faculty-toolbox-feedback {
+		@include clearfix;
+		@include rem('padding', 0.5, 1);
+		height: 45px;
+		@include font-size(12);
+		@include line-height(16);
+		color: #fff;
+		transition: all .2s ease;
+		border-bottom: 1px solid #222;
+		@extend .antialiased;
+		font-weight: 600;
+
+		p {
+			@include clearfix;
+			margin: 0;
+			color: #aaa;
+		}
+
+		.feedback-number {
+			float: left;
+			display: block;
+			@include rem('padding-right', 0.5);
+			text-align: right;
+			@include font-size(36);
+			@include line-height(30);
+			@extend .disable-select;
+		}
+
+		em {
+			color: #fff;
+		}
+
+		a {
+			font-style: italic;
+			font-weight: 400;
+			text-decoration: none;
+			color: #fff !important;
+			-webkit-font-smoothing: subpixel-antialiased;
+		}
+
+		a:hover {
+			color: #fff !important;
+			text-decoration: underline;
+		}
+
+	} // .faculty-toolbox-feedback
+
+	.faculty-toolbox-more-search-tools {
+		padding: 0;
+		transition: all .2s ease;
+		border-top: 1px solid #3d3d3d;
+
+		a {
+			display: block;
+			@include rem('padding', 0.5, 1);
+			height: 39px;
+			@include font-size(12);
+			color: #ddd;
+			text-decoration: none;
+
+			&:hover {
+				background: $accent;
+				color: #fff !important;
+			}
+
+			.icon-arrow-right {
+				float: right;
+				display: block;
+				@include font-size(14);
+				@include line-height(24);
+			}
+
+			.icon-search {
+				position: relative;
+				@include rem('top', 0.15);
+				@include rem('margin-right', 0.25);
+				@include font-size(14);
+			}
+
+		} // a
+
+	} // .faculty-toolbox-more-search-tools
+
+} // .faculty-toolbox
+
+/*	Faculty archive tile grid
+		======================================================================== */
+
+#faculty-archive .faculty-tiles {
+	margin: 0 -2px 0 0;
+
+	@include min-width ( $iPadLandscape ) {
+		margin: 0 -4px 0 0;
+		@include rem('margin-bottom', 1);
+	}
+
+	// set width to slightly-less-than-correct percentage
+	// because isotope uses rounding in calculating column widths
+	// which breaks the layout at certain widths
+	$isoContainerWidth: 1064;
+
+	// ( 1064 * 0.125 ) - 4 = 129
+
+	$itemWidth: ( $isoContainerWidth * ( 1/8 ) ) - 4; // 129
+	$itemInnerWidth: $itemWidth * 0.75; // 96.75
+
+	.jsIsotopeItem {
+		position: relative;
+		z-index: 0;
+		float: left;
+		width: percentage( $itemInnerWidth / $isoContainerWidth );
+		padding-top: percentage( 174/$isoContainerWidth );
+
+		.jsIsotopeItemInner {
+			display: none;
+			position: absolute;
+			top: 0;
+			bottom: percentage( 4/174 );
+			left: 0;
+			width: percentage( $itemWidth / $itemInnerWidth );
+			text-decoration: none;
+
+			&.visible {
+				display: block;
+			}
+
+			.faculty-member-image{
+				//padding-top: 100%;
+			}
+
+			.faculty-member-header {
+				@include rem('padding', 0.5);
+			}
+
+			.faculty-member-name {
+				margin: 0;
+				@include font-size(12);
+				@include line-height(14);
+				font-weight: 600;
+				color: #fff;
+				@extend .antialiased;
+			}
+
+			.faculty-member-unit {
+				display: none;
+			}
+
+		} // jsIsotopeItemInner
+
+		&.featured {
+			width: percentage( 200/$isoContainerWidth );
+			padding-top: percentage( 348/$isoContainerWidth );
+
+			.jsIsotopeItemInner {
+				width: percentage( 262/200 );
+				bottom: percentage( 4/348 );
+
+				.faculty-member-header {
+					@include rem('padding', 1);
+				}
+
+				.faculty-member-name {
+					@include rem('margin-bottom', 0.25);
+					@include font-size(18);
+					@include line-height(18);
+				}
+
+				.faculty-member-unit {
+					display: block;
+					margin: 0;
+					@include font-size(10);
+					@include line-height(14);
+					text-transform: uppercase;
+					letter-spacing: 0.1em;
+					font-weight: 400;
+					color: #fff;
+				}
+
+			} // .jsIsotopeItemInner
+
+		} // &.featured
+
+	} // .jsIsotopeItem
+
+} // #faculty-archive .faculty-tiles

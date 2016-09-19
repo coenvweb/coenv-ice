@@ -1,0 +1,601 @@
+
+/*	Mobile menu
+		(for skinnier viewports)
+		This element is a cloned version of .main-menu.normal-menu (via menu.js)
+		======================================================================== */
+
+.main-menu.mobile-menu {
+	display: block;
+	position: fixed;
+	z-index: 0;
+	top: 0;
+	right: 0;
+	//bottom: 0;
+	width: 80%;
+	//height: 100%;
+	overflow-y: scroll;
+	background: #303030;
+	//transition: all 0.25s ease;
+
+	@include min-width ( $iPadPortrait ) {
+		display: none !important;
+	}
+
+	@media print {
+		display: none !important;
+	}
+
+	.mobile-menu-active & {
+		bottom: 0;
+		height: 100%;
+	}
+
+	// all <ul>s
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	// all <li>s
+	li {
+		@include font-size(14);
+	}
+
+	// all <a>s
+	a {
+		display: block;
+		@include rem('padding', 0.5, 1);
+		color: #ddd;
+		text-decoration: none;
+
+		&:hover {
+			background: $accent;
+			color: $white !important;
+		}
+
+	} // a
+
+	// top level items
+	.page-depth-0 {
+		@include font-size(12);
+		@include line-height(13);
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		font-weight: 600;
+
+		&:hover span > a {
+			background: $accent;
+			color: #fff;
+		}
+
+		i {
+			@extend .icon-arrow-right;
+			color: #888;
+		}
+
+		&.expanded i {
+			@extend .icon-arrow-down;
+		}
+
+	} // .page-depth-0
+
+	.search-form {
+		display: block;
+		width: 100%;
+		@include rem('padding', 1);
+		border-bottom: 1px solid #3d3d3d;
+
+		.field-wrap {
+			display: block;
+			width: 100%;
+		}
+
+		input[type="text"] {
+			width: 85%;
+			background: #666;
+			color: #eee;
+
+			@include placeholder {
+				color: #eee;
+			}
+
+		} // input[type="text"]
+
+		button[type="submit"] {
+			width: 15%;
+			background: #666;
+			border-left: none;
+			color: #eee;
+		}
+
+	} // .search-form
+
+	#menu-main {
+		border-top: 1px solid #222;
+		border-bottom: 1px solid #3d3d3d;
+	}
+
+	// top menu (appended via menu.js)
+	.top-menu.mobile-top-menu {
+		border-top: 1px solid #222;
+
+		li {
+			@include font-size(12);
+			@include line-height(14);
+		}
+
+		.search-form {
+			display: none;
+		}
+
+		.give a i {
+			@include rem('margin-right', 0.25);
+			color: $accent-red;
+		}
+
+	} // .top-menu.mobile-top-menu
+
+
+} // .main-menu.mobile-menu
+
+/*	Mobile menu drop down items
+		======================================================================== */
+
+.main-menu.mobile-menu .page-depth-0  {
+	position: relative;
+
+	@media print {
+		display: none !important;
+	}
+
+	&:hover span > a {
+		background: none;
+		color: #ddd;
+	}
+
+	span > a:hover {
+		background: $accent;
+		color: #fff;
+	}
+
+	&.menu-item-active,
+	&.current_page_item,
+	&.current-page-ancestor {
+
+		> span > a {
+			background: $accent;
+			color: #fff;
+
+			i {
+				//@extend .icon-arrow-down;
+			}
+
+		} // > span > a
+
+		.children {
+			display: block;
+
+		} // .children
+
+	} // current or ancestor
+
+	&.current_page_item .pagenav a {
+		background: $accent;
+		color: #fff;
+	}
+
+	.children {
+		display: none;
+
+		.children {
+			display: none !important;
+		}
+
+		li.menu-item-subheader .children {
+			display: block !important;
+			@include rem('padding-left', 1);
+
+		} // li.menu-item-subheader .children
+
+		.pagenav {
+		}
+
+		li {
+			@include font-size(13);
+			@include line-height(16);
+			text-transform: none;
+			letter-spacing: 0;
+			font-weight: 400;
+		}
+
+		a {
+			display: block;
+			@include rem('padding', 0.5, 1, 0.5, 2.5);
+			color: #ddd;
+		}
+
+		li.current_page_item > a {
+			background: $accent;
+			color: #fff;
+		}
+
+		ul.children {
+			@include rem('padding-left', 1);
+		}
+
+	} // .children
+
+} // .main-menu.mobile-menu .page-depth-0
+
+// disable hover for touch devices
+.touch .main-menu.mobile-menu {
+
+	a:hover {
+		background: none !important;
+		color: #ddd !important;
+	}
+
+	.menu-item-active > a,
+	.current_page_item > a {
+		background: $accent !important;
+		color: #fff !important;
+	}
+
+} // .touch .main-menu.mobile-menu
+
+/*	Normal menu
+		For wider viewports
+		======================================================================== */
+
+.main-menu.normal-menu {
+	position: relative;
+	display: none;
+
+	@include min-width ( $iPadPortrait ) {
+		display: block;
+	}
+
+	@media print {
+		display: none;
+	}
+
+	// all <ul>s
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	// all <li>s
+	li {
+		@include font-size(14);
+	}
+
+	// all <a>s
+	a {
+		display: block;
+		color: $text;
+		text-decoration: none;
+
+		&:hover {
+			background: $accent;
+			color: #fff !important;
+		}
+
+	} // a
+
+	// menu <ul>
+	#menu-main {
+		float: right;
+		width: 38%; // tweak for more nav room
+		height: 99px;
+
+		@include min-width ( 868 ) {
+			width: 45%; // tweak for more nav room
+		}
+
+		@include min-width ( $iPadLandscape ) {
+			display: table;
+			width: auto; // tweak for more nav room
+		}
+
+		// columns
+		.column {
+			float: left;
+			width: 50%;
+
+			@include min-width ( $iPadLandscape ) {
+				display: inline;
+				width: auto;
+			}
+
+			li {
+
+				@include min-width ( $iPadPortrait ) {
+					border: none;
+				}
+
+				&:nth-child(0n+3) a {
+					border: none;
+				}
+
+			} // li
+
+			&:last-child li:last-child a:after {
+				display: none;
+			}
+
+		} // .column
+
+		// top level items
+		.page-depth-0 {
+			position: relative;
+			@include rem('padding', 0, 0, 0, 0.5);
+			width: 100%;
+			height: 33px;
+			@include font-size(12);
+			@include line-height(13);
+			text-transform: uppercase;
+			letter-spacing: 0.1em;
+			font-weight: 600;
+
+			@include min-width ( $iPadLandscape ) {
+				float: none;
+				display: table-cell;
+				padding: 0;
+				width: auto;
+				height: auto;
+			}
+
+			&:hover span > a {
+				background: $accent;
+				color: #fff;
+				border-color: transparent;
+			}
+
+			// injected with Main_Nav_Walker class
+			// helps with item borders and vertical centering
+			span {
+				display: table;
+				width: 100%;
+				height: 33px;
+
+				@include min-width ( $iPadLandscape ) {
+					position: relative; // Needed in Firefox for a:after borders
+					height: 99px;
+					text-align: center;
+				}
+
+			} // span
+
+			span > a {
+				position: relative;
+				display: table-cell;
+				@include rem('padding', 0, 0.5);
+				vertical-align: middle;
+				height: 33px;
+				color: $text;
+				border-bottom: 1px solid $border;
+
+				@include min-width ( $iPadLandscape ) {
+					@include rem('padding', 0, 0.8);
+					border-bottom: none;
+
+					&:after {
+						content: "";
+						display: block;
+						position: absolute;
+						top: 25px;
+						right: 0;
+						bottom: 25px;
+						width: 1px;
+						height: 49px;
+						background: $border;
+					}
+
+				} // min-width: $iPadLandscape
+
+			} // span > a
+
+			&:hover span > a:after {
+				display: none;
+			}
+
+			&:last-child a:after {
+			//	display: none;
+			}
+
+			&.current_page_ancestor span > a,
+			&.current_page_item span > a,
+			&.current_page_parent span > a,
+			&.current-menu-item span > a {
+				background: $accent;
+				color: #fff;
+
+				&:after {
+					display: none;
+				}
+
+				@include min-width( $iPadLandscape ) {
+
+					// arrow
+					&:before {
+						content: "";
+						display: block;
+						position: absolute;
+						top: 100%;
+						right: 0;
+						left: 50%;
+						margin-left: -14px;
+						width: 0;
+						height: 0;
+						border-left: 14px solid transparent;
+						border-right: 14px solid transparent;
+						border-top: 10px solid $accent;
+					}
+
+				} // min-width: $iPadLandscape
+
+			} // &.current-page-ancestor a
+
+		} // .page-depth-0
+
+	} // #menu-main
+
+	.search-form {
+		display: none;
+
+	} // .search-form
+
+} // .main-menu.normal-menu
+
+/*	Normal menu drop down items
+		======================================================================== */
+
+.main-menu.normal-menu .page-depth-0  {
+	position: relative;
+	
+	.submenu-container {
+		position: relative;
+	}
+
+	&.menu-item-active .children {
+		display: block;
+
+		.children {
+			display: none;
+		}
+
+	} // &.menu-item-active .children
+
+	&.menu-item-active > span > a {
+		background: $accent-lt !important;
+	}
+
+	// assistive triangle elements to enable moving cursor at an
+	// angle from title to dropdown
+	&.menu-item-active .submenu-container:before {
+		display: block;
+		content: "";
+		position: absolute;
+		bottom: 0;
+		right: 100%;
+		width: 0;
+		height: 0;
+		border-bottom: 40px solid transparent;
+		border-left: 40px solid transparent;
+	}
+
+	.children {
+		display: none;
+		position: absolute;
+		z-index: 999;
+		right: 0;
+		min-width: 350px;
+		background: #222;
+		background: rgba(0,0,0,0.9);
+
+		@include min-width ( $iPadLandscape ) {
+			right: 0;
+		}
+
+		// sub menu item columns
+		.col-left,
+		.col-right {
+			float: left;
+			width: 50%;
+		}
+
+		// top level page titles
+		.pagenav {
+			@extend .antialiased;
+
+			a {
+				@include rem('padding', 1);
+				@include serif;
+				@include font-size(24);
+				@include line-height(24);
+				font-weight: 400;
+				text-transform: none;
+				letter-spacing: 0;
+				background: $accent-lt;
+				color: #fff;
+			}
+
+		} // .pagenav
+
+		li {
+			@include font-size(13);
+			@include line-height(16);
+			text-transform: none;
+			letter-spacing: 0;
+			font-weight: 400;
+
+		} // li
+
+		.children {
+			position: relative;
+			width: 50%;
+			background: none;
+		}
+
+		.children li {
+			width: 50%;
+			//width: 50%;
+		}
+
+		li.menu-item-subheader {
+			@include font-size(11);
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+			font-weight: 600;
+
+			> a {
+				border-bottom: 1px solid #444;
+			}
+
+			.children {
+				display: block;
+			}
+
+		} // li.menu-item-subheader
+
+		a {
+			@include rem('padding', 0.5, 1);
+			color: #ddd;
+
+			&:hover {
+				background: $accent-lt;
+			}
+
+		} // a
+
+		li.current_page_item > a {
+			background: $accent;
+		}
+
+	} // .children
+
+} // .main-menu.normal-menu .page-depth-0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

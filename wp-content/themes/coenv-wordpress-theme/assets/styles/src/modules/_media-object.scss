@@ -1,0 +1,26 @@
+
+/*	Media objects
+		Image aligned left, content to the right
+		======================================================================== */
+
+.media {
+	font-size: 0;
+
+	.media__image,
+	.media__content {
+		display: inline-block;
+	}
+
+	.media__image {
+		width: 20%;
+
+	} // .media__image
+
+	.media__content {
+		width: 80%;
+		@include font-size(14);
+		@include line-height(24);
+
+	} // .media__content
+
+} // .media

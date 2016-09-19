@@ -1,0 +1,68 @@
+
+/*	Widgets
+		======================================================================== */
+
+.widget {
+	@extend .clearfix;
+	@include rem('padding-bottom', 1);
+
+	& > header {
+		@include rem('margin-bottom', 0.5);
+
+		@include min-width ( $iPadPortrait ) {
+			@include rem('margin-bottom', 1);			
+		}
+
+		h1 {
+			position: relative;
+			z-index: 0;
+			margin: 0;
+			@include font-size(16);
+			@include line-height(24);
+			font-weight: 400;
+
+			span {
+				@include rem('padding-right', 0.5);
+				background: url( $images-path + 'bg-wave-cut.png' );
+
+				.page-area & {
+					background: #fff;
+				}
+
+			} // span
+
+			a {
+				float: right;
+				@include rem('padding-left', 0.5);
+				@include font-size(11);
+				@include line-height(26);
+				font-weight: 600;
+				text-transform: uppercase;
+				//letter-spacing: 0.1em;
+				text-decoration: none;
+				color: #666;
+				background: url( $images-path + 'bg-wave-cut.png' );
+
+				.page-area & {
+					background: #fff;
+				}
+
+			} // a
+
+			&:after {
+				content: "";
+				display: block;
+				position: absolute;
+				z-index: -1;
+				top: 50%;
+				width: 100%;
+				height: 1px;
+				background: #fff;
+				border-top: 1px solid $border;
+			}
+
+		} // h1
+
+	} // & > header
+
+} // .widget

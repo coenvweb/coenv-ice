@@ -1,0 +1,134 @@
+
+/*	Module: form
+		======================================================================== */
+
+form {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+	line-height: 0;
+
+	input,
+	button {
+		@include sans;
+		@include font-size(14);
+		white-space: nowrap;
+		display: inline-block;
+		background: #fff;
+		border: none;
+		color: $text-lt;
+
+	} // input, button
+
+	input[type="text"] {
+
+		@include placeholder() {
+			color: $text-lt;
+		}
+
+	} // input[type="text"]
+
+	.field-wrap {
+		$field-wrap-height: 2;
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 0; // white space hack
+		white-space: nowrap;
+
+		label {
+			@extend .visuallyhidden;
+		}
+
+		input,
+		button {
+			display: inline-block;
+			vertical-align: middle;
+			@include font-size(12);
+			border-radius: 0;
+			@include rem('height', $field-wrap-height);
+		}
+
+		input[type="text"] {
+			@include rem('padding', 0, 0.5);
+			width: 85%;
+			border-radius: $radius 0 0 $radius;
+		}
+
+		button[type="submit"] {
+			@include rem('padding', 0, 0.5);
+			width: 15%;
+			text-align: center;
+			background: #ddd;
+			border-radius: 0 $radius $radius 0;
+
+			span {
+				@extend .visuallyhidden;
+			}
+
+			i {
+				position: relative;
+				text-align: center;
+				display: block;
+				@include font-size(18);
+			}
+
+		} // button[type="submit"]
+
+	} // .field-wrap
+
+} // form
+
+/*
+form {
+
+	.field-wrap {
+		$field-wrap-height: 2;
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 0; // white space hack
+		white-space: nowrap;
+
+		label {
+			@extend .visuallyhidden;
+		}
+
+		input,
+		button {
+			display: inline-block;
+			vertical-align: middle;
+			@include font-size(12);
+			border-radius: 0;
+			@include rem('height', $field-wrap-height);
+		}
+
+		input[type="text"] {
+			@include rem('padding', 0, 0.5);
+			width: 85%;
+			border-radius: $radius 0 0 $radius;
+		}
+
+		button[type="submit"] {
+			@include rem('padding', 0, 0.5);
+			width: 15%;
+			text-align: center;
+			background: #ddd;
+			border-radius: 0 $radius $radius 0;
+
+			span {
+				@extend .visuallyhidden;
+			}
+
+			i {
+				position: relative;
+				text-align: center;
+				display: block;
+				@include font-size(18);
+			}
+
+		} // button[type="submit"]
+
+	} // .field-wrap
+
+} // form
+*/

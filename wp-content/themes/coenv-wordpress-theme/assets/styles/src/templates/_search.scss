@@ -1,0 +1,34 @@
+
+/*	Search page specific styles
+		======================================================================== */
+
+.template-search {
+
+	.search-header {
+
+		.article__title {
+			margin: 0;
+			padding: 0;
+			border: none;
+		}
+
+	} // .search-header
+
+	.article {
+		border-bottom: 1px solid $border;
+
+		.breadcrumbs {
+			@include rem('margin-bottom', 1);
+		}
+
+		.article__title {
+			margin: 0;
+			padding: 0;
+			@include font-size(24);
+			@include line-height(30);
+			border: none;
+		}
+
+	} // .article
+
+} // .template-search 

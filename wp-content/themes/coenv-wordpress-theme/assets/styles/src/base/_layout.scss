@@ -1,0 +1,182 @@
+
+/* 	==========================================================================
+		Layout
+		Site-wide main layout styles
+		========================================================================== */
+
+html,
+body {
+	height: 100%;
+}
+
+//html.mobile-menu-active {
+//	height: 100%;
+//
+//	body,
+//	.layout-outer {
+//		height: 100%;
+//	}
+//
+//} // html.mobile-menu-active
+
+body {
+	@include sans;
+	color: $text;
+}
+
+// outer wrapper
+.layout-outer {
+	position: relative;
+
+	.lt-ie9 & {
+		width: $max-width;
+	}
+
+} // .layout-outer
+
+// inner wrapper
+$layout-wrapper-translateX: 80%;
+.layout-wrapper {
+	position: relative;
+	z-index: 100;
+	width: 100%;
+	//height: 100%;
+	//overflow-y: scroll;
+	//@include transition( background .25s ease );
+	//transition: background .25s ease;
+
+	// this is here to help out decorative pseudo elements
+	// that have negative right positions on single faculty pages
+	// might have to remove if this causes negative effects anywhere else.
+	overflow-x: hidden;
+	background: url( $images-path + 'bg-wave-cut.png' ) top center;
+
+	//@include transition( transform 0.2s ease );
+	transition: transform 0.2s ease;
+	//@include transform-style( preserve-3d );
+	//@include backface-visibility( hidden );
+	//@include transform( translate3d(0,0,0) );
+
+	.lt-ie9 & {
+		width: auto;
+		overflow: auto;
+	}
+
+	.mobile-menu-active & {
+		//@include transform( translateX(-$layout-wrapper-translateX) );
+		transform: translateX( -$layout-wrapper-translateX );
+		height: 100%;
+		overflow-y: hidden;
+	}
+
+	.banner-revealed & {
+		background: #222;
+	}
+
+} // .layout-wrapper
+
+// transitioning to .layout-container
+.layout-container,
+.container {
+	@extend .clearfix;
+	margin: 0 auto;
+	@include rem('padding', 0, 0.5);
+	max-width: ( $max-width / 1px ) + ( 2 * ( $base-font-size / 1px ) ) + px;
+
+	@include min-width ( $iPadPortrait ) {
+		@include rem('padding', 0, 1);
+	}
+
+} // .layout-container
+
+// columns
+@mixin col-1() {
+	width: 24.7169811%; // 262px at widest
+
+	@media print {
+		width: auto;
+	}
+}
+
+@mixin col-2 {
+	width: 49.8113208%; // 528px at widest
+
+	@media print {
+		width: auto;
+	}
+}
+
+@mixin col-3 {
+	width: 74.9056604%; // 794px at widest
+
+	@media print {
+		width: auto;
+	}
+}
+
+/*	Main content section
+		======================================================================== */
+
+section[role="main"] {
+	@extend .clearfix;
+	position: relative;
+	@extend .hide-on-banner-reveal;
+
+	// big title within banner area
+	// place within main col if main and side cols are present
+	.section-header {
+display: none;
+		position: absolute;
+		bottom: 100%;
+
+		h1 {
+			margin: 0;
+			@include rem('padding', 1);
+			@include serif;
+			font-weight: 400;
+
+			.has-banner & {
+				color: #fff;
+				@extend .antialiased;
+				background: rgba(0,0,0,0.5);
+			}
+
+		} // h1
+
+	} // .section-header
+
+	.main-col {
+
+		@include min-width ( $iPadPortrait ) {
+			float: right;
+			@include col-3;
+		}
+
+		@media print {
+			width: 100%;
+		}
+
+	} // .main-col
+
+	&.full-width .main-col  {
+		width: 100%;
+	}
+
+	.side-col {
+		clear: left;
+		@include rem('margin-bottom', 1);
+
+		@include min-width ( $iPadPortrait ) {
+			float: left;
+			@include col-1;
+		}
+
+		@media print {
+			display: none;
+		}
+
+	} // .side-col
+
+} // section[role="main"]
+
+

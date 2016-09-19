@@ -1,0 +1,27 @@
+{
+  "name": "elcontraption-starter",
+  "version": "0.1.0",
+  "author": "Darin Reid / elegant contraption",
+  "dependencies": {
+    "jquery": "~1.9.1",
+    "modernizr": "~2.6.2",
+    "normalize": "https://raw.github.com/elcontraption/normalize.css/master/normalize.scss",
+    "respond": "~1.2.0",
+    "chosen": "~0.9.14",
+    "jquery-throttle-debounce": "latest",
+    "jquery-easing": "~1.3.0",
+    "jquery-hoverIntent": "https://github.com/briancherne/jquery-hoverIntent.git",
+    "isotope": "~1.5.25",
+    "isotope-perfectmasonry": "https://github.com/zonear/isotope-perfectmasonry.git",
+    "fastclick": "~0.6.7",
+    "selectivizr": "~1.0.2",
+    "jquery.lazyload": "~1.8.4",
+    "jquery-fast-click": "https://github.com/dave1010/jquery-fast-click.git#~1.0.0",
+    "hammerjs": "~1.0.5",
+    "get-size": "https://github.com/desandro/get-size.git#~1.1.2",
+    "masonry": "~3.0.0",
+    "fitvids": "~1.0.3",
+    "jquery-placeholder": "https://github.com/mathiasbynens/jquery-placeholder.git#~2.0.7"
+  },
+  "devDependencies": {}
+}

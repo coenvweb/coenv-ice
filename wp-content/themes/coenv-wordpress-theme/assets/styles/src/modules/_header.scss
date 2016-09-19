@@ -1,0 +1,348 @@
+
+/*	Browsehappy message
+		======================================================================== */
+.lt-ie9 .browsehappy {
+	position: fixed;
+	z-index: 99999999;
+	top: 0;
+	right: 0;
+	left: 0;
+	@include rem('padding', 1);
+	width: 100%;
+	background: $accent-purple;
+	color: #fff;
+	text-decoration: none;
+
+} // .browshappy
+
+
+/*	Header
+		Site-wide header area, including primary navigation and banner images.
+		======================================================================== */
+
+.hide-on-banner-reveal {
+	opacity: 1;
+	transition: opacity 0.25s ease;
+
+	.banner-revealed & {
+		opacity: 0;
+	}
+
+} // .hide-on-banner-reveal
+
+.banner-wrapper {
+	position: relative;
+
+	// default banner padding
+	@include rem('padding-bottom', 7);
+
+	// disable for certain templates
+	.post-type-archive-faculty &,
+	.single-faculty & {
+		@include rem('padding-bottom', 0);		
+	}
+
+	// for pages that have banners assigned
+	// define banner behavior
+	.has-banner & {
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		//@include transition( padding-bottom .25s ease );
+
+		// help out older browsers with background-size
+		.lt-ie9 & {
+			-ms-behavior: url(/backgroundsize.min.htc);
+		}
+
+	} // .has-banner &
+
+	// top level pages have bigger banners
+	.page-top-level.has-banner & {
+		padding-bottom: 25%;
+	}
+
+	.has-banner.banner-revealed & {
+		padding-bottom: 50% !important;
+		background-size: contain;
+		cursor: pointer;
+	}
+
+	// disable default padding for specific pages
+	.home & {
+		padding: 0;
+	}
+
+	@media print {
+		padding: 0 !important;
+	}
+
+	.banner-info {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		margin: 0 auto;
+		width: 100%;
+		max-width: $max-width;
+		text-align: right;
+
+		@media print {
+			display: none;
+		}
+
+		.banner-revealed & {
+			//display: none;
+		}
+
+		a {
+			display: inline-block;
+			@include rem('margin', 0, 1);
+			@include rem('padding', 0.5, 1);
+			@include font-size(11);
+			color: #fff;
+			color: rgba(255,255,255,0.8);
+			text-decoration: none;
+			text-shadow: 0px 0px 1em rgba(0,0,0,0.5);
+
+			&:hover {
+				color: #fff !important;
+				background: $bg-dk;
+				background: rgba(0,0,0,0.9);
+			}
+
+		} // a
+
+		i {
+			position: relative;
+			top: 0.1em;
+			@include rem('margin-right', 0.25);
+			@include font-size(14);
+
+			.banner-revealed & {
+				@extend .icon-cross;
+			}
+
+		} // i
+
+	} // .banner-info
+
+	.banner-caption {
+		position: absolute;
+		top: 100%;
+		right: 0;
+		left: 0;
+		margin: 0 auto;
+		@include rem('padding', 1);
+		@extend .antialiased;
+		@include font-size(12);
+		@include col-2;
+		display: block;
+		max-width: $max-width;
+		color: #ddd;
+		opacity: 0;
+		transition: all .25s ease;
+
+		@media print {
+			display: none;
+		}
+
+		.banner-revealed & {
+			opacity: 1;
+		}
+
+		h2 {
+			margin: 0;
+			@include serif;
+			font-weight: 400;
+			color: #fff;
+		}
+
+	} // .banner-caption
+
+} // .banner-wrapper
+
+.layout-container--header {
+	@include rem('padding', 0.5);
+
+	@include min-width( $iPadPortrait ) {
+		@include rem('padding', 1);
+		//@include rem('padding', 1, 1, 2);
+	}
+
+} // .container.header-container
+
+/*	Site-wide header
+		======================================================================== */
+
+.site-header {
+	@extend .clearfix;
+	display: table;
+	width: 100%;
+	height: 100%;
+	background: $white;
+	@extend .shadow;
+	@extend .hide-on-banner-reveal;
+
+	@include min-width ( $iPadPortrait ) {
+		display: block;
+		height: 99px;
+	}
+
+	#logo {
+		position: relative;
+		display: table-cell;
+		margin: 0;
+		width: 85%;
+
+		@include min-width ( 580 ) {
+			float: left;
+			display: block;
+			width: 446px;
+		}
+
+		// take care of ~1px white space to the right of the logo
+		&:before {
+			display: block;
+			content: "";
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: -1px;
+			background: $accent;
+			width: 2px;
+			height: 100%;
+		}
+
+		a {
+			position: relative;
+			z-index: 100;
+			display: block;
+			padding-top: 22.4%;
+			width: 100%;
+			background: {
+				image: url(../../../assets/img/logo.png);
+				repeat: no-repeat;
+			}
+
+			.svg & {
+				background-image: url(../../../assets/img/logo.svg);
+			}
+
+			@media print {
+				position: relative;
+				display: block;
+				padding-top: 22.4%;
+				width: 100%;
+				background: none !important;
+
+				&:after {
+					display: none !important;
+				}
+
+			} // @media print
+
+			img {
+				display: none;
+
+				@media print {
+					display: block;
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: -3px; // fine tune white gaps
+					max-height: 99px;
+				}
+
+			} // img
+
+			span {
+				@extend .visuallyhidden;
+			}
+
+		} // a
+
+	} // #logo
+
+	#show-menu {
+		display: table-cell;
+		height: 100%;
+		vertical-align: middle;
+		text-align: right;
+
+		@media print {
+			display: none;
+		}
+
+		@include min-width ( $iPadPortrait ) {
+			display: none;
+		}
+
+		button {
+			display: inline;
+			margin: 0;
+			@include rem('padding-right', 1);
+			border: none;
+			background: none;
+			@extend .icon-list;
+			@include font-size(14);
+			color: #888;
+
+			&:hover {
+				color: $text !important;
+			}
+
+			span {
+				position: relative;
+				@include sans;
+				@include font-size(11);
+				font-weight: 600;
+				text-transform: uppercase;
+				//@extend .visuallyhidden;
+
+				@include min-width ( 580 ) {
+					top: -0.1em;
+				}
+
+			} // span
+
+		} // button
+
+	} // #show-menu
+
+} // .site-header
+
+/*	Print breadcrumbs
+		======================================================================== */
+
+.coenv-print-breadcrumbs {
+	display: none;
+
+	@media print {
+		display: block;
+	}
+
+} // .coenv-print-breadcrumbs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

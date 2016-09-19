@@ -1,0 +1,12 @@
+/*	Main layout
+		======================================================================== */
+/* line 4, ../scss/main.scss */
+body {
+  background: #f5f5f5;
+}
+
+/* line 11, ../scss/main.scss */
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+}

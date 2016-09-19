@@ -1,0 +1,6 @@
+{
+	"name": "CoEnv WordPress Theme",
+	"version": "0.1.1", // Remember to update this in style.css!
+	"download_url": "https://github.com/elcontraption/coenv-wordpress-theme/archive/master.zip",
+	"details_url": "https://github.com/elcontraption/coenv-wordpress-theme"
+}

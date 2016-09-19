@@ -1,0 +1,93 @@
+
+/* 	==========================================================================
+		Share button for articles
+		To be used with share.js coenv plugin
+		========================================================================== */
+
+.share {
+	display: none;
+	// positioned in _article.scss
+	@include font-size(12);
+	text-decoration: none;
+	color: $text-lt;
+
+	// only show if js is enabled
+	&.active {
+		display: block;
+	}
+
+	span {
+		display: inline-block;
+		@include rem('margin-right', 0.25);
+	}
+
+	i {
+		position: relative;
+		top: 0.1em;
+	}
+
+} // .share
+
+.share-modal {
+	position: fixed;
+	z-index: -99999;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: table;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.75);
+	opacity: 0;
+	transition: opacity 0.25s ease;
+
+	&.active {
+		z-index: 9999;
+	}
+
+	&.active-visible {
+		opacity: 1;
+	}
+
+	.share-modal-inner {
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+
+		.share-modal-content {
+			margin: 0 auto;
+			@include rem('padding', 2);
+			max-width: 300px;
+			background: #fff;
+			border-radius: 4px;
+
+			a {
+				display: block;
+				@include rem('margin-bottom', 1);
+				@include font-size(16);
+				text-decoration: none;
+			}
+
+			a:last-child {
+				margin-bottom: 0;
+			}
+
+			.share-twitter {
+				@extend .icon-twitter;
+			}
+
+			.share-facebook {
+				@extend .icon-facebook;
+			}
+
+			span {
+				@include rem('margin-left', 0.25);
+				@include sans;
+			}
+
+		} // .share-modal-content
+
+	} // .share-modal-inner
+
+} // .share-modal

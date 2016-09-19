@@ -1,0 +1,39 @@
+/*	Main layout
+		======================================================================== */
+
+body {
+	background: #f5f5f5;
+}
+
+.wrapper {
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 960px;
+}
+
+header[role="banner"] {
+	text-align: center;
+
+	h1 {
+
+	}
+
+	h2 {
+		@include font-size(16);
+		color: #333;
+	}
+
+} // header[role="banner"]
+
+
+
+
+
+
+
+
+
+
+

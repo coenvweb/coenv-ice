@@ -1,0 +1,13 @@
+// http://www.exratione.com/2011/12/a-dark-style-for-chosen-selects/
+
+.chzn-container {
+}
+
+.search-choice-close {
+	right: 17px !important;
+}
+
+.chzn-results li:hover,
+.chzn-results li.highlighted, {
+	background: $accent !important;
+}

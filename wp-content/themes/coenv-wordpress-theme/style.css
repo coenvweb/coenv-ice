@@ -1,0 +1,9 @@
+/*
+Theme Name: CoEnv
+Author: <a href="http://elcontraption.com/">Darin Reid</a> & <a href="http://www.ryanscherler.com/">Ryan Scherler</a>
+Description: A custom WordPress theme for the UW College of the Environment
+Version: 0.1.1
+Text Domain: coenv
+*/
+
+@import url('../coenv-wordpress-theme/assets/styles/build/screen.css');

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Procession: a looping slider plugin for jQuery</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="/assets/css/screen.css">
+
+        <!-- Scripts at bottom -->
+
+        <style type="text/css">
+
+            #demo {
+                margin: 100px auto;
+                padding: 200px 0;
+                width: 800px;
+                height: 800px;
+                outline: 10px solid #ddd;
+            }
+
+            #demo:focus {
+                outline: 10px solid red;
+            }
+
+            #demo .inner {
+                /*display: none;*/
+                margin: 0 auto;
+                width: 400px;
+                height: 400px;
+                background: rgba(0,0,0,0.1);
+            }
+
+            #demo .item {
+                margin: 10px;
+                height: 100px;
+                padding: 40px;
+                background: rgba(0,0,0,0.1);
+                cursor: pointer;
+                text-align: center;
+            }
+
+            #demo .item span {
+                text-align: center;
+                font-size: 2em;
+                color: #fff;
+            }
+
+            #demo .item.active {
+                outline: 8px solid #fff;
+            }
+
+            #demo .item-1 {
+                width: 200px;
+                height: 100px;
+                background: rgb(153, 0, 0);
+            }
+
+            #demo .item-2 {
+                width: 100px;
+                height: 50px;
+                background: rgb(255, 102, 0);
+            }
+
+            #demo .item-3 {
+                width: 120px;
+                height: 20px;
+                background: rgb(255, 204, 0);
+            }
+
+            #demo .item-4 {
+                width: 270px;
+                height: 70px;
+                background: rgb(153, 204, 0);
+            }
+
+            #demo .item-5 {
+                width: 300px;
+                height: 300px;
+                background: rgb(51, 153, 0);
+            }
+
+            #demo .item-6 {
+                width: 110px;
+                height: 110px;
+                background: rgb(0, 102, 153);
+            }
+
+            #demo .item-7 {
+                width: 200px;
+                height: 200px;
+                background: rgb(0, 51, 153);
+            }
+
+            #demo .item-8 {
+                width: 120px;
+                height: 120px;
+                background: rgb(51, 51, 102);
+            }
+
+            #demo .item-9 {
+                width: 240px;
+                height: 240px;
+                background: rgb(51, 0, 51);
+            }
+
+            #demo .item-10 {
+                width: 180px;
+                height: 180px;
+                background: rgb(153, 0, 102);
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <!--[if lt IE 9]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <div class="wrapper">
+
+            <header role="banner">
+                <hgroup class="container">
+                    <a class="instance" href="#">Create/destroy plugin instance</a>
+                </hgroup>
+            </header>
+
+            <section id="demo" tabindex="0">
+                <div class="inner">
+                    <article class="item item-1"><span>1</span></article>
+                    <article class="item item-2"><span>2</span></article>
+                    <article class="item item-3"><span>3</span></article>
+                    <article class="item item-4"><span>4</span></article>
+                    <article class="item item-5"><span>5</span></article>
+                    <article class="item item-6"><span>6</span></article>
+                    <article class="item item-7"><span>7</span></article>
+                    <article class="item item-8"><span>8</span></article>
+                    <article class="item item-9"><span>9</span></article>
+                    <article class="item item-10"><span>10</span></article>
+                </div>
+            </section>
+
+        </div><!-- .wrapper -->
+
+        <script src="/components/jquery/jquery.min.js"></script>
+        <script src="/components/imagesloaded/jquery.imagesloaded.min.js"></script>
+        <script src="/jquery.procession.js"></script>
+        <!--<script src="/jquery.procession.autoadvance.js"></script>-->
+
+        <script>
+            $(function() {
+
+                var $demo = $('#demo');
+
+
+                $('.instance').click( function () {
+
+                    if ( typeof $demo.data('procession') === 'object' ) {
+                        $demo.procession('destroy');
+                    } else {
+                        $demo.procession({
+                            innerSelector: '.inner',
+                            itemSelector: '.item',
+                            //orientation: 'vertical',
+                            align: 'center',
+                            //origin: 'center',
+                            active: 0,
+                            keyNav: true,
+                            containerStyles: {
+                              //  overflow: 'visible'
+                            }
+                        });
+                    }
+
+                } );
+            });
+        </script>
+    </body>
+</html>

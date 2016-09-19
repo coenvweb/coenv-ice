@@ -1,0 +1,88 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot");
+  src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.svg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+/* line 13, ../scss/icomoon.scss */
+[data-icon]:before {
+  font-family: 'icomoon';
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+/* line 30, ../scss/icomoon.scss */
+.icon-chicken, .icon-camel, .icon-ant, .icon-deer, .icon-giraffe, .icon-pig, .icon-cat, .icon-bunny, .icon-seahorse, .icon-duck {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 40, ../scss/icomoon.scss */
+.icon-chicken:before {
+  content: "\e000";
+}
+
+/* line 43, ../scss/icomoon.scss */
+.icon-camel:before {
+  content: "\e001";
+}
+
+/* line 46, ../scss/icomoon.scss */
+.icon-ant:before {
+  content: "\e002";
+}
+
+/* line 49, ../scss/icomoon.scss */
+.icon-deer:before {
+  content: "\e004";
+}
+
+/* line 52, ../scss/icomoon.scss */
+.icon-giraffe:before {
+  content: "\e005";
+}
+
+/* line 55, ../scss/icomoon.scss */
+.icon-pig:before {
+  content: "\e006";
+}
+
+/* line 58, ../scss/icomoon.scss */
+.icon-cat:before {
+  content: "\e007";
+}
+
+/* line 61, ../scss/icomoon.scss */
+.icon-bunny:before {
+  content: "\e008";
+}
+
+/* line 64, ../scss/icomoon.scss */
+.icon-seahorse:before {
+  content: "\e009";
+}
+
+/* line 67, ../scss/icomoon.scss */
+.icon-duck:before {
+  content: "\e00a";
+}

@@ -1,0 +1,48 @@
+/*	Base font size and rounded corners
+		======================================================================== */
+$base-font-size: 14px;
+$radius: 2px;
+
+/*  Maximum width
+    ======================================================================== */
+
+$max-width: 1060px;
+$maxWidthBreakpoint: ( $max-width / 1px ) + ( ( $base-font-size * 2 ) / 1px );
+
+/*	Asset paths
+		======================================================================== */
+$images-path: '../../img/';
+$fonts-path: '../../fonts/';
+
+/*	Colors
+		======================================================================== */
+
+$white: #fff;
+$accent: #3B2559;
+$accent-purple: $accent;
+$accent-lt: lighten( $accent, 15% );
+$accent-blue: #00a8ff;
+$accent-red: #b82828;
+$accent-hover: $accent-lt;
+
+$text: #333;
+$text-md: #444;
+$text-lt: #666;
+$text-very-lt: #eee;
+
+$border: #ddd;
+
+$bg-dk: #363533;
+
+/*  Global shadow
+    ======================================================================== */
+
+@mixin shadow {
+  //@include box-shadow( rgba(0,0,0,0.1) 0 0 5px );
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.shadow {
+  //@include box-shadow( rgba(0,0,0,0.1) 0 0 5px );
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}

@@ -1,0 +1,72 @@
+/* 	==========================================================================
+		UW College of the Environment
+		Authors: Darin Reid & Ryan Scherler
+		2012-2013
+
+		Styles authored in SASS
+
+		Import all components here
+		========================================================================== */
+
+/*	Frameworks
+		======================================================================== */
+//@import 'compass';
+
+/*	Utilities
+		======================================================================== */
+@import 'utilities/config.scss';
+@import 'utilities/normalize.scss';
+@import 'utilities/mixins.scss';
+@import 'utilities/defaults.scss';
+
+/*	Vendor/plugins
+		======================================================================== */
+
+// RoyalSlider for home page features
+@import 'vendor/royalslider.scss';
+
+// Chosen for styling form elements
+@import 'vendor/chosen.scss';
+@import 'vendor/chosen-theme.scss';
+
+// Isotope for faculty grid
+@import 'vendor/isotope.scss';
+
+// Icomoon for icons
+@import 'vendor/icomoon.scss';
+
+/*	Base styles
+		======================================================================== */
+@import 'base/type.scss';
+@import 'base/layout.scss';
+@import 'base/links.scss';
+
+/*	Modules
+		======================================================================== */
+@import 'modules/button.scss';
+@import 'modules/media.scss';
+@import 'modules/form.scss';
+@import 'modules/menu_top.scss';
+@import 'modules/header.scss';
+@import 'modules/menu_main.scss';
+@import 'modules/menu_secondary.scss';
+@import 'modules/article.scss';
+@import 'modules/pagination.scss';
+@import 'modules/breadcrumbs.scss';
+@import 'modules/widget.scss';
+@import 'modules/widget_social.scss';
+@import 'modules/widget_events.scss';
+
+/*	Templates
+		Specific pages and page areas that further extend modules and components
+		======================================================================== */
+@import 'templates/home.scss';
+@import 'templates/page.scss';
+@import 'templates/blog.scss';
+@import 'templates/search.scss';
+@import 'templates/footer.scss';
+@import 'templates/faculty-archive.scss';
+@import 'templates/faculty-single.scss';
+
+
+

@@ -1,0 +1,232 @@
+/*	Secondary navigation menu
+		======================================================================== */
+
+#secondary-nav {
+	position: relative;
+	@include rem('margin-bottom', 1);
+
+	// all <ul>s
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	// all <a>s
+	a {
+		text-decoration: none;
+		color: $text;
+
+		br {
+			display: none;
+		}
+
+		// hide arrow after each nav item
+		i {
+			display: none;
+			position: relative;
+			top: 0.1em;
+			@include rem('margin-left', 0.15);
+			@include font-size(14);
+			color: #ccc;
+		}
+
+	} // a
+
+	// top level <li>
+	.pagenav {
+
+		// ancestor title
+		> a {
+			position: absolute;
+			right: 0;
+			bottom: 100%;
+			left: 0;
+			display: block;
+			@include rem('padding', 1);
+			@include serif;
+			@include font-size(24);
+			@include line-height(24);
+			font-weight: 400;
+			@extend .antialiased;
+			background: $bg-dk;
+			background: rgba(0,0,0,0.9);
+			color: #fff;
+
+			&:hover {
+				background: $accent-lt;
+				color: #fff !important;
+				//background: $accent;
+			}
+
+			@include min-width ( $iPadPortrait ) {
+				@include font-size(36);
+				@include line-height(36);
+			}
+
+		} // a
+
+		// everything under the title <li>
+		> ul {
+			background: #eee;
+
+			> li {
+
+				&:last-child a {
+					border-bottom: none;
+				}
+
+				> a {
+					display: block;
+					@include rem('padding', 0.5, 1);
+					border-bottom: 1px solid darken( $border, 5% );
+				}
+
+				> a:hover {
+					color: $text !important;
+
+					.no-touch & {
+						color: #fff !important;
+						background: $accent-lt;
+						border-color: $accent-lt;
+						//background: #444;
+						//border-color: #444;
+					}
+				}
+
+				&.current_page_item > a,
+				&.current_page_parent > a,
+				&.current_page_ancestor > a,
+				&.active a {
+					color: #fff !important;
+					background: $accent;
+					border-color: $accent;
+					//background: #444;
+					//border-color: #444;
+				}
+
+			} // li
+
+			> li.current_page_item,
+			> li.current_page_parent,
+			> li.current_page_ancestor {
+
+				> a {
+
+				} // > a
+
+				> .children {
+					position: relative;
+					display: block;
+					background: #d9d9d9;
+
+					&:before {
+						display: block;
+						content: "";
+						position: absolute;
+						top: 0;
+						left: 5%;
+						width: 0;
+						height: 0;
+						border-left: 14px solid transparent;
+						border-right: 14px solid transparent;
+						border-top: 10px solid $accent;
+					}
+
+					&:hover:before {
+						border-top-color: $accent !important;
+					}
+
+				} // > .children
+
+				&:hover > .children:before {
+					border-top-color: $accent-lt;
+				}
+
+				> .children > li:first-child > a {
+					@include rem('padding-top', 1);
+				}
+
+			} // > li.current_page_item
+
+			.children {
+				display: none;
+				//@include rem('padding', 0.5, 0);
+				border-bottom: 1px solid darken( $border, 5% );
+
+				> li {
+					@include font-size(11);
+					font-weight: 600;
+					text-transform: uppercase;
+				}
+
+				> li.current_page_item,
+				> li.current_page_ancestor,
+				> li.current_page_parent {
+					font-weight: 800;
+
+					> a {
+						background: $accent;
+						color: #fff;
+						@extend .antialiased;
+
+						&:hover {
+							color: $text !important;
+
+							.no-touch & {
+								color: #fff !important;
+								background: $accent-lt;
+							}
+						}
+
+					} // > a
+
+					> .children {
+						display: block;
+						background: #ccc;
+					}
+
+				} //
+
+				> li.current_page_item a {
+					// arrow
+						i {
+							display: inline;
+						}
+				}
+
+				> li a {
+					display: block;
+					@include rem('padding', 0.25, 1);
+				}
+
+				> li a:hover {
+					color: $text !important;
+
+					.no-touch & {
+						background: $accent-lt;
+						color: #fff !important;
+					}
+				}
+
+				.children {
+					padding: 0;
+					border: none;
+
+					li {
+						text-transform: none;
+					}
+
+					a {
+						@include rem('padding-left', 2);
+					}
+
+				} // .children
+
+			} // .children
+
+		} // > ul
+
+	} // .pagenav
+
+} // #secondary-nav

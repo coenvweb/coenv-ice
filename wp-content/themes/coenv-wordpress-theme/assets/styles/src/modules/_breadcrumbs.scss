@@ -1,0 +1,31 @@
+
+/*	Displaying breadcrumbs
+		======================================================================== */
+
+.breadcrumbs {
+	display: block;
+	@include font-size(12);
+	color: $text-lt;
+
+	.breadcrumbs__list {
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			display: inline-block;
+		}
+
+		li:after {
+			content: "/";
+			@include rem('margin', 0, 0.5);
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+	} // .breadcrumbs__list
+
+} // .breadcrumbs

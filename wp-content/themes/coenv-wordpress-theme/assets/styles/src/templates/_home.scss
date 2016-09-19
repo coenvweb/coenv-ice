@@ -1,0 +1,412 @@
+
+/*	Template: home
+		Customization specific to the home page
+		======================================================================== */
+
+body.home {
+
+
+} // body.home
+
+
+/*	Home page features
+		======================================================================== */
+
+#features {
+	@extend .clearfix;
+
+	.features-container {
+		text-align: center;
+	}
+
+	.no-js & .feature {
+		display: none;
+		margin-right: auto;
+		margin-left: auto;
+
+		&:first-child {
+			display: block;
+		}
+
+	} // .no-js &
+
+	.feature {
+		@extend .clearfix;
+		position: relative;
+		@include rem('margin', 0, 0.5);
+		max-width: $max_width;
+		background: #fff;
+		@extend .shadow;
+		text-align: left;
+
+		&.loading {
+
+			.js & {
+				@extend .invisible;
+			}
+
+		} // &.loading
+
+		@include min-width ( $iPadPortrait ) {
+			@include rem('margin', 0, 1);
+			min-height: 450px;
+		}
+
+		// when viewport is bigger than $max-width + side margins
+		@include min-width ( $maxWidthBreakpoint ) {
+			display: inline-block;
+			width: 100%;
+		}
+
+		@media print {
+			position: relative;
+			display: block;
+			width: auto;
+			max-width: auto;
+			max-height: auto;
+		}
+
+		.feature-image {
+			position: relative;
+			padding-top: 60%;
+			width: 100%;
+			height: 100%;
+			// background image is set inline
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+
+			@include max-width ( $iPadPortrait - 1 ) {
+				.lt-ie9 & {
+					-ms-behavior: url(/backgroundsize.min.htc);
+				}
+			}
+
+			@include min-width ( $iPadPortrait ) {
+				float: left;
+				position: absolute;
+				top: 0;
+				right: 0;
+				left: 0;
+				bottom: 0;
+				padding: 0;
+				width: percentage( 675 / ( $max-width / 1px ) );
+			}
+
+			// TODO: display feature image caption
+			.feature-image-caption {
+				display: none;
+			}
+
+			@media print {
+				display: none;
+			}
+
+		} // .feature-image
+
+		.feature-info-container {
+			position: relative;
+
+			@include min-width ( $iPadPortrait ) {
+				display: table;
+				float: right;
+				width: percentage( 386 / ( $max-width / 1px ) );
+				height: 450px;
+			}
+
+			@media print {
+				display: block;
+				float: none;
+				width: auto;
+				height: auto;
+			}
+
+			.feature-info {
+				@include rem('padding', 1);
+				// background-color is set inline
+
+				@include min-width ( $iPadPortrait ) {
+					display: table-cell;
+					@include rem('padding', 1.5);
+					vertical-align: bottom;
+				}
+
+				.feature-type {
+					position: absolute;
+					right: 0;
+					bottom: 100%;
+					left: 0;
+					@include rem('padding', 0.25, 1);
+					@include font-size(11);
+					text-transform: uppercase;
+					font-weight: 600;
+					letter-spacing: 0.1em;
+					color: #fff;
+					background: #363533;
+					background: rgba(0,0,0,0.6);
+
+					@include min-width ( $iPadPortrait ) {
+						position: relative;
+						@include rem('padding', 1, 0);
+						background: none;
+						color: rgba(255,255,255,0.8);
+					}
+
+					.lt-ie9 & {
+						position: relative;
+						background: none;
+					}
+
+					@media print { 
+						position: relative;
+					}
+
+				} // .feature-type
+
+				.feature-content {
+					color: #fff;
+
+					h1 {
+						@extend .antialiased;
+						@include rem('margin', 0, 0, 0.5);
+						@include serif;
+						@include font-size(24);
+						@include line-height(30);
+						font-weight: 400;
+					}
+
+					p {
+						@include rem('margin', 0, 0, 1);
+						@include font-size(13);
+						@include line-height(19.5);
+						color: #fff;
+						color: rgba(255,255,255,0.9);
+					}
+
+					.feature-caption {
+						@include rem('margin', 1, 0, 0);
+						@include font-size(11);
+						color: rgba(255,255,255,0.8);
+					}
+
+					a {
+						color: #fff;
+					}
+
+					a:hover {
+						color: #fff !important;
+					}
+
+				} // .feature-content
+
+			} // .feature-info
+
+		} // .feature-info-container
+
+		.feature-content {
+			position: relative;
+
+		} // .feature-content
+
+	} //.feature
+
+	// nav buttons, added in home.js
+	.features-nav {
+		margin: 0 auto;
+		max-width: $max-width;
+
+		ul {
+			@include rem('margin', 0.5);
+			padding: 0;
+			text-align: right;
+
+			@include min-width ( $iPadPortrait ) {
+				@include rem('margin', 0.5, 1);
+			}
+
+			@include min-width ( $maxWidthBreakpoint ) {
+				@include rem('margin', 0.5, 0);
+			}
+
+		} // ul
+
+		li {
+			display: inline-block;
+			@include rem('margin-left', 0.5);
+		}
+
+		a {
+			display: block;
+			@include rem('width', 1);
+			@include rem('height', 1);
+			background: #bbb;
+			background: rgba(0,0,0,0.2);
+			border-radius: 50%;
+			cursor: pointer;
+
+			span {
+				@extend .visuallyhidden;
+			}
+
+			&:hover,
+			&.active {
+				background: $accent;
+			}
+
+		} // a
+
+	} // .features-nav
+
+} // #features
+
+
+/*	Stories (from CoEnv currents)
+		Currently only on home page
+		======================================================================== */
+
+.stories-container {
+	@include clearfix;
+
+	@include min-width ( $iPadPortrait ) {
+		@include rem('margin', 0, -0.5); // counteract .story padding below
+	}
+
+} // .stories-container
+
+.story {
+	@extend %media;
+
+	@include min-width( $iPadPortrait ) {
+		float: left;
+		@include rem('padding', 0, 0.5);
+		width: 33.3333%;
+	}
+
+	.inner {
+		@include clearfix;
+		@include shadow();
+		background: #fff;
+	}
+
+	.content {
+		@include rem('padding', 1);
+
+		h1 {
+			margin: 0;
+			@include serif;
+			@include font-size(16);
+			@include line-height(20);
+			font-weight: 400;
+
+			@include min-width( $iPadPortrait ) {
+				@include rem('margin-bottom', 1);
+				@include font-size(20);
+				@include line-height(24);
+			}
+
+			a {
+				text-decoration: none;
+				color: $text;
+			}
+
+		} // h1
+
+		p {
+			margin: 0;
+			@include font-size(11);
+			@include line-height(16);
+			font-weight: 400;
+
+			@include min-width( $iPadPortrait ) {
+				@include font-size(13);
+				@include line-height(20);
+			}
+
+		} // p
+
+	} // .content
+
+	.img {
+		width: 25%;
+
+		img {
+			width: 100%;
+		}
+
+		@include min-width ( $iPadPortrait ) {
+			float: none;
+			width: 100%;
+		}
+
+	} // .img
+
+} // .story
+
+/*	Events widget (currently only on home page)
+		======================================================================== */
+
+.widget-events{
+
+	.event {
+
+		.meta {
+			@include font-size(12);
+
+			i {
+				@include font-size(14);
+				color: $accent-lt;
+			}
+
+		} // .meta
+
+		header {
+
+			h1 {
+				//@include font-size(13);
+				//font-weight: 400;
+			}
+
+		} // header
+
+	} // .event
+
+} // .widget-events
+
+
+/*	Home page widgets
+		======================================================================== */
+
+.home .widget.featured-stories {
+
+	@include min-width ( $maxWidthBreakpoint ) {
+		float: left;
+		@include col-3;
+		@include rem('padding-right', 0.5);
+
+		.stories-container {
+			@include rem('margin', 0, -0.5);
+		}
+
+	} // min-width: $maxWidthBreakpoint
+
+} // .home .widget.featured-stories
+
+.home .widget-events {
+
+	@include min-width ( $maxWidthBreakpoint ) {
+		float: left;
+		@include col-1;
+		@include rem('padding-left', 0.5);
+	}
+
+} // .home .widget-events
+
+.home .widget-social {
+
+	@include min-width ( $maxWidthBreakpoint ) {
+		float: left;
+		@include col-1;
+		@include rem('padding-left', 0.5);
+	}
+
+} // .home .widget-social

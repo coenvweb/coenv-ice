@@ -1,0 +1,22 @@
+# system files
+*~
+*.DS_Store
+*.svn
+*.cvs
+*.bak
+*.swp
+*[Tt]humbs.db
+*.Trashes
+
+# editor generated
+*.sublime-project
+*.sublime-workspace
+
+# preprocessors
+*.sass-cache
+
+# development
+*config.rb
+*node_modules
+*components
+rsync-config.json

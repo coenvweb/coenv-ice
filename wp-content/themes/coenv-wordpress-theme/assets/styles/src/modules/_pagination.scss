@@ -1,0 +1,30 @@
+
+/*	Pagination
+		======================================================================== */
+
+.pagination {
+
+	ul {
+		@include rem('margin', 1);
+		@include rem('padding', 1);
+		background: #fff;
+		list-style: none;
+		text-align: center;
+	}
+
+	li {
+		display: inline-block;
+	}
+
+	li .current {
+		@extend .button;
+		background: $accent;
+	}
+
+	a {
+		@extend .button;
+		text-decoration: none;
+		color: $text;
+	}
+
+} // .pagination

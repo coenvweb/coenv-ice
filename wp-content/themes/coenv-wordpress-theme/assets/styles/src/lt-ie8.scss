@@ -1,0 +1,57 @@
+
+/*	Top nav
+		======================================================================== */
+
+#top-nav {
+
+	form {
+		display: inline-block;
+	}
+
+	ul {
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		display: inline-block;
+	}
+
+} // #top-nav
+
+/*	Mobile menu
+		======================================================================== */
+
+#show-menu {
+	display: none;
+}
+
+/*	Logo
+		======================================================================== */
+
+#logo {
+	width: 400px;
+
+	span {
+		display: none;
+	}
+
+	a {
+
+	}
+
+} // #logo
+
+/*	Banner
+		======================================================================== */
+
+.banner-wrapper {
+	background: none !important;
+
+	.banner-caption {
+		display: none;
+	}
+
+}

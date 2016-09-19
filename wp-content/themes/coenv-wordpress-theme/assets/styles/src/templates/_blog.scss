@@ -1,0 +1,76 @@
+
+/*	Template: blog
+		Customizations specific to the blog section
+		======================================================================== */
+
+.template-blog {
+
+	.article {
+		@extend .shadow;
+		@include rem('margin', 1);
+		@include rem('padding', 2);
+		background: #fff;
+
+		@include min-width ( $iPadPortrait ) {
+			@include rem('margin', 1, 0, 1, 1);
+		}
+
+		.article_header {
+
+			.article_title {
+				@include font-size(30);
+				@include line-height(36);
+
+				@include min-width ( $iPadPortrait ) {
+					@include font-size(36);
+					@include line-height(48);
+				}
+
+			} // .article_title
+
+		} // .article_header
+
+	} // .article
+
+	.blog-header {
+		@extend .clearfix;
+		@extend .shadow;
+		@include rem('margin', 1);
+		background: #fff;
+
+		@include min-width ( $iPadPortrait ) {
+			@include rem('margin', 1, 0, 1, 1);
+		}
+
+		form,
+		.input-item {
+			float: none;
+			@include rem('padding', 1);
+
+			@include min-width ( $iPadPortrait ) {
+				float: left;
+				width: 33.3333%;
+			}
+
+		}
+
+		.field-wrap,
+		.chzn-container {
+			width: 100% !important;
+		}
+
+		form {
+
+			input[type="text"] {
+				background: #eee;
+			}
+
+		} // form
+
+	} // .blog-header
+
+	.pagination ul {
+		@extend .shadow;
+	}
+
+} // .template-blog

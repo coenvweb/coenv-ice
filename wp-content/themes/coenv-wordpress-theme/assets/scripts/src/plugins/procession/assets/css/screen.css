@@ -1,0 +1,803 @@
+/* ==========================================================================
+	 Imports
+	 ========================================================================== */
+/* normalize.css v2.1.0 | MIT License | git.io/normalize */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+/* line 22, ../../components/normalize/index.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+/* line 32, ../../components/normalize/index.scss */
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+/* line 41, ../../components/normalize/index.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+/* line 50, ../../components/normalize/index.scss */
+[hidden] {
+  display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+/* line 64, ../../components/normalize/index.scss */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+/* line 74, ../../components/normalize/index.scss */
+body {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+/* line 86, ../../components/normalize/index.scss */
+a:focus {
+  outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+/* line 95, ../../components/normalize/index.scss */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 108, ../../components/normalize/index.scss */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+/* line 117, ../../components/normalize/index.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 126, ../../components/normalize/index.scss */
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+/* line 134, ../../components/normalize/index.scss */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+/* line 142, ../../components/normalize/index.scss */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+/* line 152, ../../components/normalize/index.scss */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+/* line 164, ../../components/normalize/index.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+/* line 173, ../../components/normalize/index.scss */
+pre {
+  white-space: pre-wrap;
+}
+
+/**
+ * Set consistent quote types.
+ */
+/* line 181, ../../components/normalize/index.scss */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+/* line 189, ../../components/normalize/index.scss */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 198, ../../components/normalize/index.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 205, ../../components/normalize/index.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 209, ../../components/normalize/index.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+/* line 221, ../../components/normalize/index.scss */
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+/* line 229, ../../components/normalize/index.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+/* line 241, ../../components/normalize/index.scss */
+figure {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/**
+ * Define consistent border, margin, and padding.
+ */
+/* line 253, ../../components/normalize/index.scss */
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+/* line 264, ../../components/normalize/index.scss */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 278, ../../components/normalize/index.scss */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+/* line 290, ../../components/normalize/index.scss */
+button,
+input {
+  line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+/* line 302, ../../components/normalize/index.scss */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+/* line 317, ../../components/normalize/index.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+/* line 327, ../../components/normalize/index.scss */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ */
+/* line 337, ../../components/normalize/index.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+/* line 348, ../../components/normalize/index.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+/* line 361, ../../components/normalize/index.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+/* line 370, ../../components/normalize/index.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+/* line 380, ../../components/normalize/index.scss */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+/* line 393, ../../components/normalize/index.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/**
+ * starter-common.scss
+ *
+ * Commonly used styles
+ *
+ * Darin Reid
+ * http://elcontraption.com/
+ *
+ */
+/*	Apply a natural box layout model to all elements
+		http://paulirish.com/2012/box-sizing-border-box-ftw/
+		======================================================================== */
+/* line 14, ../../components/starter-components/starter-common.scss */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*	HTML5Boilerplate
+		======================================================================== */
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+/* line 65, ../../components/starter-components/starter-common.scss */
+img {
+  vertical-align: middle;
+}
+
+/* line 69, ../../components/starter-components/starter-common.scss */
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 73, ../../components/starter-components/starter-common.scss */
+.pull-right {
+  float: right;
+}
+
+/* line 77, ../../components/starter-components/starter-common.scss */
+.pull-left {
+  float: left;
+}
+
+/* ==========================================================================
+   Media objects
+   ========================================================================== */
+/* line 86, ../../components/starter-components/starter-common.scss */
+.media,
+.media-body {
+  *zoom: 1;
+}
+/* line 40, ../../components/starter-components/starter-common.scss */
+.media:before, .media:after,
+.media-body:before,
+.media-body:after {
+  content: " ";
+  display: table;
+}
+/* line 44, ../../components/starter-components/starter-common.scss */
+.media:after,
+.media-body:after {
+  clear: both;
+}
+
+/* line 91, ../../components/starter-components/starter-common.scss */
+.media,
+.media .media {
+  margin-top: 15px;
+}
+
+/* line 95, ../../components/starter-components/starter-common.scss */
+.media:first-child {
+  margin-top: 0;
+}
+
+/* line 99, ../../components/starter-components/starter-common.scss */
+.media-object {
+  display: block;
+}
+
+/* line 103, ../../components/starter-components/starter-common.scss */
+.media-heading {
+  margin: 0 0 5px;
+}
+
+/* line 107, ../../components/starter-components/starter-common.scss */
+.media > .pull-left {
+  margin-right: 10px;
+}
+
+/* line 111, ../../components/starter-components/starter-common.scss */
+.media > .pull-right {
+  margin-left: 10px;
+}
+
+/* ==========================================================================
+   Chrome Frame prompt
+   ========================================================================== */
+/* line 119, ../../components/starter-components/starter-common.scss */
+.chromeframe {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+@media print {
+  /* line 132, ../../components/starter-components/starter-common.scss */
+  * {
+    background: transparent !important;
+    color: black !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* line 140, ../../components/starter-components/starter-common.scss */
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  /* line 144, ../../components/starter-components/starter-common.scss */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  /* line 148, ../../components/starter-components/starter-common.scss */
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links for images, or javascript/internal links
+   */
+  /* line 158, ../../components/starter-components/starter-common.scss */
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+
+  /* line 163, ../../components/starter-components/starter-common.scss */
+  pre,
+  blockquote {
+    border: 1px solid #999999;
+    page-break-inside: avoid;
+  }
+
+  /* line 168, ../../components/starter-components/starter-common.scss */
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */
+  }
+
+  /* line 173, ../../components/starter-components/starter-common.scss */
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  /* line 177, ../../components/starter-components/starter-common.scss */
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+}
+
+  /* line 187, ../../components/starter-components/starter-common.scss */
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* line 193, ../../components/starter-components/starter-common.scss */
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+/**
+ * starter-type.scss
+ *
+ * Typographic reset
+ * Include after normalize.css
+ *
+ * Darin Reid
+ * http://elcontraption.com/
+ *
+ */
+/*  Font sizing using rems
+       http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
+       ======================================================================== */
+/*  Defaults, many from HTML5Boilerplate
+        https://github.com/h5bp/html5-boilerplate/blob/v4.1.0/css/main.css
+        ======================================================================== */
+/* line 39, ../../components/starter-components/starter-type.scss */
+html,
+button,
+input,
+select,
+textarea {
+  color: #222;
+}
+
+/* line 43, ../../components/starter-components/starter-type.scss */
+body {
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 24px;
+  line-height: 2.4rem;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate.
+ * Customize the background color to match your design.
+ */
+/* line 54, ../../components/starter-components/starter-type.scss */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/* line 59, ../../components/starter-components/starter-type.scss */
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+/* line 68, ../../components/starter-components/starter-type.scss */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+/* line 81, ../../components/starter-components/starter-type.scss */
+img {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+/* line 89, ../../components/starter-components/starter-type.scss */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+/* line 99, ../../components/starter-components/starter-type.scss */
+textarea {
+  resize: vertical;
+}
+
+/*  Establish vertical rhythm
+        ======================================================================== */
+/* line 106, ../../components/starter-components/starter-type.scss */
+body.debug-vertical-rhythm {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(75, 125, 255, 0.1)), color-stop(100%, #ffffff));
+  background-image: -webkit-linear-gradient(rgba(75, 125, 255, 0.1), #ffffff 0.1rem);
+  background-image: -moz-linear-gradient(rgba(75, 125, 255, 0.1), #ffffff 0.1rem);
+  background-image: -o-linear-gradient(rgba(75, 125, 255, 0.1), #ffffff 0.1rem);
+  background-image: linear-gradient(rgba(75, 125, 255, 0.1), #ffffff 0.1rem);
+  background-size: 2.4rem 2.4rem;
+  background-position: 0 -1px;
+}
+
+/* line 112, ../../components/starter-components/starter-type.scss */
+html {
+  font-size: 62.5%;
+}
+
+/* line 116, ../../components/starter-components/starter-type.scss */
+h1 {
+  margin: 36px 0 36px;
+  margin: 3.6rem 0 3.6rem;
+  font-size: 48px;
+  font-size: 4.8rem;
+  line-height: 48px;
+  line-height: 4.8rem;
+}
+
+/* line 122, ../../components/starter-components/starter-type.scss */
+h2 {
+  margin: 36px 0 36px;
+  margin: 3.6rem 0 3.6rem;
+  font-size: 32px;
+  font-size: 3.2rem;
+  line-height: 48px;
+  line-height: 4.8rem;
+}
+
+/* line 128, ../../components/starter-components/starter-type.scss */
+h3 {
+  margin: 24px 0 24px;
+  margin: 2.4rem 0 2.4rem;
+  font-size: 24px;
+  font-size: 2.4rem;
+  line-height: 24px;
+  line-height: 2.4rem;
+}
+
+/* line 134, ../../components/starter-components/starter-type.scss */
+h4 {
+  margin: 24px 0 24px;
+  margin: 2.4rem 0 2.4rem;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 24px;
+  line-height: 2.4rem;
+}
+
+/* line 140, ../../components/starter-components/starter-type.scss */
+h5 {
+  margin: 24px 0 24px;
+  margin: 2.4rem 0 2.4rem;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 24px;
+  line-height: 2.4rem;
+}
+
+/* line 146, ../../components/starter-components/starter-type.scss */
+h6 {
+  margin: 24px 0 24px;
+  margin: 2.4rem 0 2.4rem;
+  font-size: 12px;
+  font-size: 1.2rem;
+  line-height: 24px;
+  line-height: 2.4rem;
+}
+
+/* line 152, ../../components/starter-components/starter-type.scss */
+p, ul, ol, blockquote, figure {
+  margin: 24px 0 24px;
+  margin: 2.4rem 0 2.4rem;
+  padding: 0;
+}
+
+/* line 160, ../../components/starter-components/starter-type.scss */
+ul ul,
+ul ol
+ol ol,
+ol ul {
+  margin-left: 1.5rem;
+}
+
+/*	Main layout
+		======================================================================== */
+/* line 4, ../scss/main.scss */
+body {
+  background: #f5f5f5;
+}
+
+/* line 11, ../scss/main.scss */
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+/* line 16, ../scss/main.scss */
+header[role="banner"] {
+  text-align: center;
+}
+/* line 23, ../scss/main.scss */
+header[role="banner"] h2 {
+  font-size: 16px;
+  font-size: 1.6rem;
+  color: #333;
+}

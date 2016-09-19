@@ -1,0 +1,119 @@
+
+/*	Template: menu_top
+		Site-wide tippity-top menu
+		======================================================================== */
+
+#top-nav {
+	display: none;
+	@include rem('padding', 0.25, 0, 0.3);
+	background: $bg-dk;
+	font-size: 0;
+	text-align: right;
+
+	@include min-width ( $iPadPortrait ) {
+		display: block;
+	}
+
+	@media print {
+		display: none !important;
+	}
+
+	ul,
+	form {
+		display: inline-block;
+		@include rem('margin', 0, 0, 0, 0.3);
+		padding: 0;
+		font-size: 0;
+		vertical-align: top;
+	}
+
+	ul {
+		list-style: none;
+	}
+
+	li,
+	input,
+	button {
+		display: inline-block;
+		padding: 0;
+		@include font-size(10);
+		@include rem('line-height', 1.8);
+		@include rem('height', 1.8);
+		vertical-align: top;
+	}
+
+	input[type="text"] {
+		@include font-size(12);
+		background: #666;
+				color: #fff;
+				@include placeholder {
+					color: #eee;
+				}
+	} // input[type="text"]
+
+	button[type="submit"] {
+		background: #666;
+
+		i {
+			@include font-size(16);
+			color: #eee;
+		}
+
+		&:hover i {
+			color: #fff;
+		}
+
+	} // button[type="submit"]
+
+	a,
+	input,
+	button {
+		@include rem('padding', 0, 0.5);
+	}
+
+	a {
+		display: block;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		font-weight: 600;
+		text-decoration: none;
+		color: #ddd;
+		border-radius: $radius;
+
+		&:hover {
+			background: #666;
+			color: #fff !important;
+		}
+
+	} // a
+
+	form {
+
+	} // form
+
+	#menu-university {
+		float: left;
+
+	} // #menu-university
+
+	#menu-buttons {
+
+		li.give a {
+			background: $accent-red;
+			color: #fff;
+
+			i {
+				position: relative;
+				top: 0.1em;
+				@include rem('margin-right', 0.2);
+			}
+
+		} // li.give a
+
+		li.give a:hover {
+			background: darken( $accent-red, 10% );
+		}
+
+	} // #menu-buttons
+
+} // #top-nav

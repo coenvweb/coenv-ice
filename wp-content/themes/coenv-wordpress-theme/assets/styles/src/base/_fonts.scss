@@ -1,0 +1,14 @@
+/*	Fonts
+		======================================================================== */
+
+@mixin sans() {
+  font: {
+    family: "open-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+}
+
+@mixin serif() {
+  font: {
+    family: "Skolar", Georgia, serif;
+  }
+}

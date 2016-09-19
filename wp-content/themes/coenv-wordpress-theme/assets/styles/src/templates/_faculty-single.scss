@@ -1,0 +1,386 @@
+
+/*	Single faculty profile
+		======================================================================== */
+
+.single-faculty {
+
+	.faculty-header {
+		position: relative;
+		display: table;
+		float: left;
+		margin-bottom: 4px;
+		width: 262px;
+		height: 262px;
+		background: #303030;
+
+		// decorative block
+		&:after {
+			display: block;
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 100%;
+			margin-left: 4px;
+			width: 100%;
+			height: 100%;
+			background: #b4b4b4;
+		}
+
+		.upper {
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			border-bottom: 1px solid #3d3d3d;
+		}
+
+		a.back-to-faculty {
+			display: block;
+			@include rem('padding', 0.6, 1);
+			@include font-size(12);
+			color: #ddd;
+			text-decoration: none;
+			border-bottom: 1px solid #222;
+
+			&:hover {
+				background: $accent;
+				color: #fff !important;
+			}
+
+			i {
+				float: left;
+				display: block;
+				@include rem('margin-right', 0.5);
+				@include font-size(14);
+				@include line-height(21);
+			}
+
+		} // a.back-to-faculty
+
+		.lower {
+			display: table-cell;
+			vertical-align: bottom;
+		}
+
+		h1 {
+			margin: 0;
+			@include rem('padding', 0.5, 1);
+			@include serif;
+			@include font-size(36);
+			font-weight: 200;
+			color: #fff;
+			@extend .antialiased;
+			//border-top: 1px solid #222;
+		}
+
+//		h1 a {
+//			display: block;
+//			@include rem('padding', 0.5, 1);
+//			color: #fff;
+//			text-decoration: none;
+//			border-top: 1px solid #3d3d3d;
+//		}
+
+		h1 a:hover {
+			background: $accent;
+			color: #fff !important;
+		}
+
+	} // .faculty-header
+
+	.member-header {
+		@extend .clearfix;
+
+		.member-image {
+			float: right;
+			width: 528px;
+			height: 528px;
+		}
+
+		.member-vcard {
+			position: relative;
+			float: left;
+			display: table;
+			width: 528px;
+			height: 262px;
+
+			// decorative block
+			&:before {
+				display: block;
+				content: "";
+				position: absolute;
+				top: 0;
+				right: 100%;
+				width: 200%;
+				height: 100%;
+				background: inherit;
+			}
+
+			// decorative block
+			&:after {
+				display: block;
+				content: "";
+				position: absolute;
+				top: 0;
+				margin-left: 8px;
+				left: 200%;
+				width: 200%;
+				height: 100%;
+				background: inherit;
+			}
+
+			.member-vcard-inner {
+				display: table-cell;
+				@include rem('padding', 1);
+				vertical-align: bottom;
+
+				a {
+					text-decoration: none;
+					color: #fff;
+
+					&:hover {
+						color: rgba(0,0,0,0.6) !important;
+					}
+
+				} // a
+
+				.member-name {
+					margin: 0;
+					@include font-size(30);
+					@include line-height(36);
+					font-weight: 400;
+					color: #fff;
+					@extend .antialiased;
+				}
+
+				.member-academic-title {
+					margin: 0;
+					@include font-size(18);
+					@include line-height(24);
+					font-weight: 600;
+					color: #fff;
+					@extend .antialiased;
+				}
+
+				.member-unit {
+					margin: 0;
+					@include font-size(14);
+					@include line-height(21);
+					font-weight: 600;
+					letter-spacing: 0.1em;
+					text-transform: uppercase;
+					@extend .antialiased;
+				}
+
+				.member-themes {
+					color: #fff;
+
+					ul	{
+						display: inline-block;
+						@include rem('margin', 1, 0, 0);
+						padding: 0;
+						list-style: none;
+					}
+
+					li {
+						display: inline-block;
+					}
+
+					a {
+						@extend .button;
+						font-style: italic;
+						font-weight: 400;
+						background: rgba(0,0,0,0.25);
+					}
+
+					a:hover {
+						//background: #eee;
+						//color: $accent-lt !important;
+					}
+
+				} // .member-themes
+
+			} // .inner
+
+
+		} // .member-vcard
+
+	} // .member-header
+
+/*	Page area
+		======================================================================== */
+
+	.page-area {
+		@include rem('padding-bottom', 2);
+
+		#secondary-nav {
+			margin: 0;
+		}
+
+		#secondary-nav .pagenav > ul > li:last-child a {
+			border-bottom: 1px solid darken( $border, 5% );
+		}
+
+		.member-contact-links {
+			margin: 0;
+			@include rem('padding', 1);
+			list-style: none;
+			background: #eee;
+			//background: #b4b4b4;
+			color: $text;
+
+			li {
+				@include font-size(13);
+			}
+
+			a {
+				text-decoration: none;
+				color: $text;
+			} // a
+
+			i {
+				@include rem('margin-right', 0.5);
+			}
+
+			i.icon-contact-link-email {
+				@extend .icon-mail;
+			}
+
+			i.icon-contact-link-web {
+				@extend .icon-link;
+			}
+
+			i.icon-contact-link-phone {
+				@extend .icon-phone;
+			}
+
+			i.icon-contact-link-scival {
+				@extend .icon-bars;
+			}
+
+			i.icon-contact-link-twitter {
+				@extend .icon-twitter;
+			}
+
+		} // .member-contact-links
+
+		#member-tab-nav {
+			margin: 4px 0 0;
+			background: #b4b4b4;
+			color: $text-md;
+
+			ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+
+			a {
+				display: block;
+				//@include rem('padding', 1);
+			}
+
+			a:hover {
+				background: #999;
+				border-color: #999;
+			}
+
+			.active-tab a {
+				color: #fff !important;
+				background: $accent;
+				border-color: $accent;
+				//background: #444;
+				//border-color: #444;
+			}
+
+		} // #member-tab-nav
+
+		.member-tabs {
+			list-style: none;
+
+			.member-tab {
+				display: none;
+				@extend .article;
+
+				&.active-tab {
+					display: block;
+				}
+
+			} // li
+
+		} // .member-tabs
+
+		.member-pullquote {
+
+		} // .member-pullquote
+
+		.member-bio {
+
+			em {
+				font-style: normal;
+				font-weight: 600;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+			}
+
+		} // .member-bio
+
+	} // .page-area
+
+} // .single-faculty
+
+
+/*	Publications table
+		======================================================================== */
+
+.publications-table {
+	width: 100%;
+
+	th {
+		@include rem('padding', 0, 0, 0.5);
+		text-align: left;
+	}
+
+	tr {
+		border-bottom: 1px solid #ddd;
+	}
+
+	td {
+		@include rem('padding', 1, 1, 1, 0);
+		vertical-align: top;
+	}
+
+	.title {
+		width: 60%;
+
+		a {
+			@include serif;
+			@include font-size(16);
+			text-decoration: none;
+			color: $text;
+		}
+
+	} // .title
+
+	.source {
+		width: 40%;
+	}
+
+} // .publications-table
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

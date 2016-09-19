@@ -1,0 +1,50 @@
+/*	Events widget
+		======================================================================== */
+		
+.widget-events {
+
+	.event {
+		@include rem('margin-bottom', 0.5);
+		background: #fff;
+		@extend .shadow;
+
+		@include min-width( $iPadPortrait ) {
+			@include rem('margin-bottom', 1);
+		}
+
+		// wraps entire event contents
+		a {
+			display: block;
+			@include rem('padding', 1);
+			text-decoration: none;
+			color: $text;
+		}
+
+		header {
+
+			h1 {
+				margin: 0;
+				@include font-size(14);
+				@include line-height(24);
+				font-weight: 600;
+			}
+
+		} // header
+
+		footer {
+			@include font-size(13);
+
+			p.date {
+				margin: 0;
+
+				i {
+					@include rem('padding-right', 0.25);
+				}
+
+			} // p.date
+
+		} // footer
+
+	} // .event
+
+} // .widget-events
