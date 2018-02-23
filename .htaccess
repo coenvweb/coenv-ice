@@ -2,6 +2,24 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
+
+RewriteCond %{REQUEST_METHOD} POST [NC]
+RewriteCond %{REQUEST_URI} !^.*/wp-admin/ [NC]
+RewriteCond %{REQUEST_URI} !^.*/wp-cron.php [NC]
+RewriteCond %{REQUEST_URI} !^.*/wp-login.php [NC]
+# Whitelist XML-RPC Pingbacks, JetPack and Remote Posting POST Requests
+RewriteCond %{REQUEST_URI} !^.*/xmlrpc.php [NC]
+# Whitelist Jetpack JSON POST Request
+RewriteCond %{REQUEST_URI} !^.*/wp-json/jetpack/(.*) [NC]
+# Whitelist Network|Multisite Activate POST Form Requests
+RewriteCond %{REQUEST_URI} !^.*/wp-activate.php [NC]
+# Whitelist Trackback POST Requests
+RewriteCond %{REQUEST_URI} !^.*/wp-trackback.php [NC]
+# Whitelist Comments POST Form Requests
+RewriteCond %{REQUEST_URI} !^.*/wp-comments-post.php [NC]
+RewriteRule .* - [F,L]
+
+
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
